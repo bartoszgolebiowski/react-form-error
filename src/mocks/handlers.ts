@@ -1,0 +1,36 @@
+import { http, HttpResponse } from 'msw'
+
+export const handlers = [
+    http.get("http://localhost:8080/types", () => {
+        return HttpResponse.json([
+            { id: 1, value: "Normal" },
+            { id: 2, value: "Fire" },
+            { id: 3, value: "Water" },
+            { id: 4, value: "Grass" },
+            { id: 5, value: "Electric" },
+            { id: 6, value: "Ice" },
+            { id: 7, value: "Fighting" },
+            { id: 8, value: "Poison" },
+            { id: 9, value: "Ground" },
+            { id: 10, value: "Flying" },
+            { id: 11, value: "Psychic" },
+            { id: 12, value: "Bug" },
+            { id: 13, value: "Rock" },
+            { id: 14, value: "Ghost" },
+            { id: 15, value: "Dragon" },
+            { id: 16, value: "Dark" },
+            { id: 17, value: "Steel" },
+            { id: 18, value: "Fairy" },
+        ]);
+    }),
+    http.get("http://localhost:8080/rarities", () => {
+        return HttpResponse.json([
+            { id: 1, value: "Common" },
+            { id: 2, value: "Uncommon" },
+            { id: 3, value: "Rare" },
+            { id: 4, value: "Ultra Rare" },
+            { id: 5, value: "Legendary" },
+            { id: 6, value: "Mythical" },
+        ]);
+    })
+]
